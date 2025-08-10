@@ -164,3 +164,264 @@ footer p {
         font-size: 0.9rem;
     }
 }
+
+/* Hero section layout */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-image img {
+    max-width: 220px;
+    border-radius: 50%;
+    border: 3px solid #7FFF00;
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.5);
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+/* Social links */
+.social-links a {
+    margin-right: 15px;
+    color: #7FFF00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* About section layout */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.about-image img {
+    max-width: 250px;
+    border-radius: 15px;
+    border: 2px solid #7FFF00;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills-grid span {
+    background-color: #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(127, 255, 0, 0.4);
+    text-align: center;
+    color: #7FFF00;
+}
+
+/* Hero text only (no image) */
+.hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Fix spacing between elements */
+.hero-text h1 {
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+/* Prevent overlap on smaller screens */
+@media (max-width: 600px) {
+    .hero-text {
+        padding: 60px 15px;
+    }
+}
+
+/* ===== Page Layout Fixes for Consistency ===== */
+
+/* About Page */
+.about-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-text {
+    max-width: 700px;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    margin-top: 20px;
+}
+
+/* Portfolio Page */
+.portfolio {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.project-grid {
+    margin-top: 40px;
+}
+
+/* Contact Page */
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact ul li {
+    margin-bottom: 15px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+
+    .about-container,
+    .portfolio,
+    .contact {
+        padding: 60px 15px;
+    }
+}
+
+/* Modern Navbar */
+.main-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(127, 255, 0, 0.3);
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7FFF00;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7FFF00;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #7FFF00;
+}
+
+/* Prevent fixed navbar overlap on all pages */
+main,
+section:first-of-type {
+    padding-top: 120px;
+}
+
+/* Navbar with only right-side links */
+.navbar-right-only {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+/* Highlight the current page link */
+.nav-links a.current {
+    color: #7FFF00;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-links a.current::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7FFF00;
+}
