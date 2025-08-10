@@ -9,11 +9,12 @@
 </head>
 
 <body class="dark-theme">
-    <header class="animate__animated animate__fadeInDown">
-        <nav>
-            <ul>
+    <header class="main-header animate__animated animate__fadeInDown">
+        <nav class="navbar">
+            <div class="logo">Prakash Sai Alla</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="current">About</a></li>
                 <li><a href="portfolio.html">Projects</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -21,14 +22,33 @@
         </nav>
     </header>
 
-    <section class="animate__animated animate__fadeInUp">
-        <h2>About Me</h2>
-        <p>
-            I’m a Master’s student in Business Analytics at UMass Amherst with a strong interest in data science,
-            machine learning, and solving real-world problems with analytics. I have experience in Python, SQL,
-            and building ML models to forecast and detect anomalies.
-        </p>
+
+    <section class="about-section animate__animated animate__fadeInUp">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/profile.jpg" alt="Prakash Sai Alla">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I’m a Master’s student in Business Analytics at UMass Amherst with a strong interest in data
+                    science,
+                    machine learning, and solving real-world problems with analytics.
+                </p>
+                <h3>Skills</h3>
+                <div class="skills-grid">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Tableau</span>
+                    <span>Excel</span>
+                    <span>Machine Learning</span>
+                    <span>Data Visualization</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <script src="assets/script.js"></script>
 
     <footer class="animate__animated animate__fadeInUp">
         <p>© 2025 Prakash Sai Alla</p>
