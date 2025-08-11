@@ -2,11 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Prakash Sai Alla – Portfolio</title>
-    <link rel="stylesheet" href="assets/styles.css">
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Only one font awesome link, use latest stable -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Fira+Code:wght@500&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body class="dark-theme">
@@ -24,16 +32,40 @@
 
     <section class="hero animate__animated animate__fadeInUp">
         <div class="hero-text">
-            <h1>Hi, I’m Prakash Sai Alla</h1>
-            <p><span class="typewriter"></span></p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/prakash-sai-alla" target="_blank">LinkedIn</a>
-                <a href="https://github.com/prakashsaialla" target="_blank">GitHub</a>
-                <a href="mailto:prakashsaialla34@gmail.com">Email</a>
+            <h1>Prakash Sai Alla</h1>
+            <p><span class="im-text">I'm</span> <span id="changing-text"></span></p>
+            <p class="tagline">Turning raw data into powerful insights and innovative AI solutions.</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/prakash-sai-alla" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/prakashsaialla" target="_blank" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://instagram.com/prakash.rep" target="_blank" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://discord.com/users/il_posh" target="_blank" title="Discord"><i
+                        class="fab fa-discord"></i></a>
+                <a href="mailto:prakashsaialla34@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
             <a class="btn hover-glow" href="portfolio.html">View My Projects</a>
+            <a href="Prakash_Sai_Alla_Resume.pdf" class="btn hover-glow" target="_blank">View My Resume</a>
         </div>
     </section>
+
+    <div class="quote-carousel">
+        <div class="quote-slide active">
+            <p>"The goal is to turn data into information, and information into insight." – Carly Fiorina</p>
+        </div>
+        <div class="quote-slide">
+            <p>"Without data, you're just another person with an opinion." – W. Edwards Deming</p>
+        </div>
+        <div class="quote-slide">
+            <p>"The future belongs to those who understand data." – Unknown</p>
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" aria-label="Previous quote">&#10094;</a>
+        <a class="next" aria-label="Next quote">&#10095;</a>
+    </div>
 
     <script src="assets/script.js"></script>
 
