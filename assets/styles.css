@@ -530,3 +530,161 @@ section h2 {
     margin-bottom: 100px;
     /* increase this value to add space */
 }
+
+/* ===== Contact Page ===== */
+
+/* Ensure contact page starts below header */
+.contact {
+    padding-top: 100px;
+    text-align: center;
+}
+
+/* Contact Me heading */
+.contact h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #7fff00;
+    margin-bottom: 20px;
+}
+
+/* Contact details row: phone, email, address */
+.contact-info-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    /* Increased spacing */
+    flex-wrap: nowrap;
+    color: white;
+    text-align: center;
+}
+
+.contact-info-icons div,
+.contact-info-icons span {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    /* Keep in one line */
+    font-size: 1.8rem;
+}
+
+.contact-info-icons i {
+    font-size: 1.6rem;
+    color: #7fff00;
+    margin-right: 10px;
+}
+
+.contact-info-icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info-icons a:hover {
+    color: #7fff00;
+}
+
+/* Subtitle under contact details */
+.contact-subtitle {
+    color: white;
+    text-align: center;
+    margin: 30px 0 15px;
+    font-size: 1.3rem;
+}
+
+/* Social links (two lines, side-by-side with icons) */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px 50px;
+    justify-content: center;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.contact-list i {
+    font-size: 1.4rem;
+    color: #7fff00;
+    margin-right: 10px;
+}
+
+.contact-list a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    color: #7fff00;
+}
+
+/* Send Me a Message heading */
+.contact h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    color: #7fff00;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Contact form */
+.contact-form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #7fff00;
+    background: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #aaff33;
+    box-shadow: 0 0 5px #7fff00;
+}
+
+/* Center Send Message button */
+.contact-form button {
+    align-self: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.logo a {
+    color: #7fff00;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #aaff33;
+}
+
+.logo a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #7fff00;
+    text-decoration: none;
+}
