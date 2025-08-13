@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
 <body class="dark-theme">
+    <!-- Header -->
     <header class="main-header animate__animated animate__fadeInDown">
         <nav class="navbar">
             <div class="logo">
@@ -27,24 +31,47 @@
         </nav>
     </header>
 
+    <!-- Contact Section -->
     <section class="contact animate__animated animate__fadeInUp">
-        <h2>Contact Me</h2>
+        <h2 data-aos="fade-down" data-aos-duration="800">Contact Me</h2>
 
-        <div class="contact-info-icons">
-            <div><i class="fas fa-phone"></i> <a href="tel:+14133151598">+1 413 315 1598</a></div>
-            <div><i class="fas fa-envelope"></i> <a
-                    href="mailto:prakashsaialla34@gmail.com">prakashsaialla34@gmail.com</a>
+        <!-- Contact Info Cards -->
+        <div class="contact-info-cards">
+            <div class="info-card" data-aos="fade-right" data-aos-delay="100">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Call Me</h3>
+                    <p><a href="tel:+14133151598">+1 413 315 1598</a></p>
+                </div>
             </div>
-            <div><i class="fas fa-map-marker-alt"></i> <span>Amherst, MA</span></div>
+
+            <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:prakashsaialla34@gmail.com">prakashsaialla34@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="info-card" data-aos="fade-left" data-aos-delay="300">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Address</h3>
+                    <p>Amherst, MA</p>
+                </div>
+            </div>
         </div>
 
-        <p class="contact-subtitle">You can also reach me directly through these channels:</p>
+        <!-- Subtitle -->
+        <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="400">
+            You can also reach me directly through these channels:
+        </p>
 
-        <ul class="contact-list">
+        <!-- Social Links -->
+        <ul class="contact-list" data-aos="zoom-in" data-aos-delay="500">
             <li><i class="fas fa-envelope"></i> <a href="mailto:prakashsaialla34@gmail.com">Email</a></li>
             <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/prakash-sai-alla"
-                    target="_blank">LinkedIn</a>
-            </li>
+                    target="_blank">LinkedIn</a></li>
             <li><i class="fab fa-github"></i> <a href="https://github.com/prakashsaialla" target="_blank">GitHub</a>
             </li>
             <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/prakash.rep"
@@ -52,12 +79,12 @@
             <li><i class="fab fa-discord"></i> <a href="https://discord.com/users/il_posh" target="_blank">Discord</a>
             </li>
             <li><i class="fab fa-snapchat"></i> <a href="https://www.snapchat.com/add/prakashposh"
-                    target="_blank">Snapchat</a>
-            </li>
+                    target="_blank">Snapchat</a></li>
         </ul>
 
-        <h3>Send Me a Message</h3>
-        <form class="contact-form">
+        <!-- Contact Form -->
+        <h3 data-aos="fade-up" data-aos-delay="600">Send Me a Message</h3>
+        <form class="contact-form" data-aos="fade-up" data-aos-delay="700">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -65,9 +92,19 @@
         </form>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-delay="800">
         <p>© 2025 Prakash Sai Alla</p>
     </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80
+        });
+    </script>
 </body>
 
 </html>

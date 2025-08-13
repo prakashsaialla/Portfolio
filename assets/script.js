@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typingSpeed = 100;
+    const typingSpeed = 75;
     const erasingSpeed = 50;
-    const delayBetween = 1500;
+    const delayBetween = 1000;
 
     const textElement = document.getElementById("changing-text");
 

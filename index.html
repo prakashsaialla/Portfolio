@@ -6,19 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Prakash Sai Alla – Portfolio</title>
 
+    <!-- Base Styles -->
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Only one font awesome link, use latest stable -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+    <!-- Fonts & Icons -->
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Fira+Code:wght@500&family=Inter:wght@400;500&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+    <style>
+        /* Remove underline from social links */
+        .social-icons a {
+            text-decoration: none;
+        }
+
+        /* Buttons - pop & green glow hover */
+        .btn {
+            padding: 12px 24px;
+            background-color: #7FFF00;
+            color: #0f0f0f;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 10px 18px 0;
+            transition: transform 0.2s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+
+        .btn:hover {
+            background-color: #9fff33;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 15px #7FFF00;
+        }
+
+        /* Social icons - bouncy glow hover */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: #7fff00;
+            font-size: 2rem;
+            transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            animation: iconBounce 0.6s ease infinite alternate;
+            text-shadow: 0 0 8px #7fff00, 0 0 16px #7fff00;
+            color: #aaff33;
+        }
+
+        @keyframes iconBounce {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+
+            100% {
+                transform: scale(1.12) translateY(-4px);
+            }
+        }
+    </style>
 </head>
 
 <body class="dark-theme">
-    <header class="main-header animate__animated animate__fadeInDown">
+    <!-- Header -->
+    <header class="main-header" data-aos="fade-down" data-aos-duration="600">
         <nav class="navbar navbar-right-only">
             <ul class="nav-links">
                 <li><a href="index.html" class="current">Home</a></li>
@@ -30,12 +93,18 @@
         </nav>
     </header>
 
-    <section class="hero animate__animated animate__fadeInUp">
-        <div class="hero-text">
-            <h1>Prakash Sai Alla</h1>
-            <p><span class="im-text">I'm</span> <span id="changing-text"></span></p>
-            <p class="tagline">Turning raw data into powerful insights and innovative AI solutions.</p>
-            <div class="social-icons">
+    <!-- Hero -->
+    <section class="hero" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
+        <div class="hero-text" data-aos="fade-up" data-aos-delay="250">
+            <h1 data-aos="zoom-in" data-aos-delay="300">Prakash Sai Alla</h1>
+            <p data-aos="fade-up" data-aos-delay="400">
+                <span class="im-text">I'm</span> <span id="changing-text"></span>
+            </p>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="500">
+                Turning raw data into powerful insights and innovative AI solutions.
+            </p>
+
+            <div class="social-icons" data-aos="fade-up" data-aos-delay="600">
                 <a href="https://linkedin.com/in/prakash-sai-alla" target="_blank" title="LinkedIn"><i
                         class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/prakashsaialla" target="_blank" title="GitHub"><i
@@ -46,12 +115,16 @@
                         class="fab fa-discord"></i></a>
                 <a href="mailto:prakashsaialla34@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <a class="btn hover-glow" href="portfolio.html">View My Projects</a>
-            <a href="Prakash_Sai_Alla_Resume.pdf" class="btn hover-glow" target="_blank">View My Resume</a>
+
+            <div data-aos="fade-up" data-aos-delay="700">
+                <a class="btn" href="portfolio.html">View My Projects</a>
+                <a href="Prakash_Sai_Alla_Resume.pdf" class="btn" target="_blank">View My Resume</a>
+            </div>
         </div>
     </section>
 
-    <div class="quote-carousel">
+    <!-- Quotes -->
+    <div class="quote-carousel" data-aos="fade-up" data-aos-delay="200">
         <div class="quote-slide active">
             <p>"The goal is to turn data into information, and information into insight." – Carly Fiorina</p>
         </div>
@@ -62,16 +135,30 @@
             <p>"The future belongs to those who understand data." – Unknown</p>
         </div>
 
-        <!-- Navigation arrows -->
         <a class="prev" aria-label="Previous quote">&#10094;</a>
         <a class="next" aria-label="Next quote">&#10095;</a>
     </div>
 
     <script src="assets/script.js"></script>
 
-    <footer class="animate__animated animate__fadeInUp">
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-duration="600">
         <p>© 2025 Prakash Sai Alla</p>
     </footer>
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 650,
+            easing: 'ease-out',
+            offset: 80,
+            once: true
+        });
+        window.addEventListener('load', () => {
+            AOS.refreshHard();
+        });
+    </script>
 </body>
 
 </html>
