@@ -1,18 +1,144 @@
-<!-- resume.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Resume</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="icon" type="image/png" href="assets/favicon.jpeg">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume – Prakash Sai Alla</title>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
+
+    <!-- Fonts & Icons (Poppins used for heading) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;700&family=Fira+Code:wght@500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+    <style>
+        /* PAGE & LAYOUT */
+        .resume-section {
+            padding: 120px 20px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* **MATCHED TO YOUR CONTACT H2** */
+        .resume-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7fff00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .resume-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Resume Layout */
+        .resume-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+        }
+
+        /* Sticky Sidebar */
+        .resume-sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            position: sticky;
+            top: 100px;
+            align-self: start;
+            text-align: center;
+        }
+
+        .resume-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .typewriter {
+            color: #7fff00;
+            font-size: 1rem;
+            min-height: 22px;
+            margin-bottom: 18px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .resume-block {
+            margin-bottom: 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .resume-block h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #7fff00;
+        }
+
+        .resume-main {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .resume-main ul {
+            padding-left: 20px;
+        }
+
+        /* Button glow consistency */
+        .btn.hover-glow {
+            padding: 12px 22px;
+            background-color: #7fff00;
+            color: #0f0f0f;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform .18s ease, box-shadow .22s ease, background-color .18s ease;
+        }
+
+        .btn.hover-glow:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 18px #7fff00;
+            background-color: #9fff33;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-sidebar {
+                position: static;
+            }
+        }
+    </style>
 </head>
 
 <body class="dark-theme">
+
+    <!-- Header (unchanged) -->
     <header class="main-header animate__animated animate__fadeInDown">
         <nav class="navbar">
-            <div class="logo">Prakash Sai Alla</div>
+            <div class="logo"><a href="index.html">Prakash Sai Alla</a></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -23,14 +149,142 @@
         </nav>
     </header>
 
-    <section class="resume">
-        <h2>My Resume</h2>
-        <iframe src="Prakash_Sai_Alla_Resume.pdf" width="100%" height="600px"></iframe>
+    <!-- Resume Section -->
+    <section class="resume-section animate__animated animate__fadeInUp">
+        <h2 data-aos="fade-down" data-aos-duration="800">My Resume</h2>
+
+        <!-- Buttons -->
+        <div class="resume-buttons" data-aos="fade-up" data-aos-delay="100">
+            <a class="btn hover-glow" href="Prakash_Sai_Alla_Resume.pdf" download>Download PDF</a>
+            <a class="btn hover-glow" href="Prakash_Sai_Alla_Resume.pdf" target="_blank">Open in New Tab</a>
+        </div>
+
+        <div class="resume-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- Sidebar -->
+            <aside class="resume-sidebar">
+                <img src="assets/profile.jpg" alt="Profile Picture" class="resume-photo" />
+                <div class="typewriter" id="typewriter-text"></div>
+
+                <div class="resume-block">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Amherst, MA</p>
+                    <p><i class="fas fa-phone"></i> +1 (413) 315-1598</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:palla@umass.edu">palla@umass.edu</a></p>
+                    <p><i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/alla-prakash-sai"
+                            target="_blank">linkedin.com/in/alla-prakash-sai</a>
+                    </p>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Skills</h4>
+                    <ul>
+                        <li>Excel, SQL, Numpy, Pandas, Tableau</li>
+                        <li>Python, Java, C, HTML, Git</li>
+                        <li>Machine Learning, Data Visualization</li>
+                        <li>Statistical Modeling, Analytical Techniques</li>
+                        <li>Teamwork, Communication, Leadership</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="resume-main">
+                <div class="resume-block">
+                    <h4>Education</h4>
+                    <p><strong>University of Massachusetts Amherst</strong>, M.S. in Business Analytics – May 2026<br />
+                        GPA: 4.0<br />
+                        Coursework: Data Management, Business Intelligence, Statistics, Python Applications, AI in
+                        Business
+                    </p>
+                    <p><strong>JNTU Hyderabad</strong>, B.Tech in AI & ML – Aug 2024<br />
+                        GPA: 3.2<br />
+                        Silver Medal – NPTEL “The Joy of Computing with Python”
+                    </p>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Experience</h4>
+                    <p><strong>PHN Technologies Pvt Ltd</strong> – Machine Learning Intern (Apr 2023 – Jul 2023)</p>
+                    <ul>
+                        <li>Built ML models (House Price Prediction, Iris Classification, Resume Parsing)</li>
+                        <li>Performed EDA, preprocessing, hyperparameter tuning</li>
+                        <li>Researched SOTA ML techniques for workflow enhancement</li>
+                    </ul>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Projects</h4>
+                    <p><strong>Airbnb Demand & Availability Forecasting</strong> – 90% accuracy, F1-score 0.94</p>
+                    <p><strong>Crypto Price Analysis using AI</strong> – Predictive models for cryptocurrency trends</p>
+                    <p><strong>Semi-Supervised ML for DDoS Detection</strong> – 94.8% accuracy</p>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Certifications</h4>
+                    <ul>
+                        <li>Microsoft Certified: Azure AI Fundamentals</li>
+                        <li>Career Essentials in Generative AI – Microsoft / LinkedIn</li>
+                        <li>Career Essentials in Data Analysis – Microsoft / LinkedIn</li>
+                        <li>Machine Learning & Data Analytics – Infosys</li>
+                    </ul>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Publications</h4>
+                    <p>Semi-Supervised Machine Learning for DDoS Detection – International Journal of Gender, Science
+                        and Technology (Nov 2023)</p>
+                </div>
+
+                <div class="resume-block">
+                    <h4>Leadership</h4>
+                    <p>Coordinator – Street Cause (Jun 2021 – Jul 2023)</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
+    <!-- Footer (unchanged) -->
+    <footer data-aos="fade-up" data-aos-delay="400">
         <p>© 2025 Prakash Sai Alla</p>
     </footer>
+
+    <!-- AOS & Typewriter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80
+        });
+
+        // Typewriter Effect (embedded)
+        const phrases = ["Data Analyst", "AI & ML Enthusiast", "Business Analytics Graduate"];
+        let phraseIndex = 0, letterIndex = 0, current = "", deleting = false;
+        const speed = 100, eraseSpeed = 50, delay = 1500;
+        const el = document.getElementById("typewriter-text");
+
+        function type() {
+            current = phrases[phraseIndex];
+            if (!deleting) {
+                el.textContent = current.substring(0, letterIndex + 1);
+                letterIndex++;
+                if (letterIndex === current.length) {
+                    deleting = true;
+                    setTimeout(type, delay);
+                    return;
+                }
+            } else {
+                el.textContent = current.substring(0, letterIndex - 1);
+                letterIndex--;
+                if (letterIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                }
+            }
+            setTimeout(type, deleting ? eraseSpeed : speed);
+        }
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
 </body>
 
 </html>

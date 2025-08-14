@@ -975,3 +975,229 @@ section h2 {
     margin-top: 15px;
     /* pull quotes closer */
 }
+
+/* Resume Layout */
+.resume-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.resume-sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.resume-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.resume-title {
+    color: #7fff00;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.resume-section-block {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.resume-section-block h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #7fff00;
+    margin-bottom: 10px;
+}
+
+.resume-section-block ul {
+    padding-left: 15px;
+}
+
+.resume-main {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.resume-item {
+    margin-bottom: 15px;
+}
+
+.resume-item h5 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.resume-item span {
+    font-size: 0.9rem;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.resume-pdf-container {
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ensure content clears fixed navbar */
+.resume-section {
+    padding: 120px 20px 60px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Center buttons */
+.resume-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+/* Two-column resume layout */
+.resume-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.resume-left {
+    flex: 1 1 280px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.resume-right {
+    flex: 2 1 500px;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.resume-left h4,
+.resume-right h4 {
+    color: #7fff00;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.resume-left ul,
+.resume-right ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.resume-pdf-container {
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.resume-section {
+    padding: 120px 20px 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.resume-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Sticky sidebar */
+.resume-sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.resume-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.resume-role {
+    color: #7fff00;
+    margin-bottom: 20px;
+}
+
+.resume-block {
+    margin-bottom: 20px;
+}
+
+.resume-block h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #7fff00;
+    margin-bottom: 8px;
+}
+
+.resume-main {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.resume-main ul {
+    padding-left: 20px;
+}
+
+.resume-pdf-container {
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-sidebar {
+        position: static;
+        top: auto;
+    }
+}
