@@ -2,143 +2,164 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resume – Prakash Sai Alla</title>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Base Styles -->
-    <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
-
-    <!-- Fonts & Icons (Poppins used for heading) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;700&family=Fira+Code:wght@500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-    <!-- AOS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
-        /* PAGE & LAYOUT */
-        .resume-section {
-            padding: 120px 20px 60px;
-            max-width: 1200px;
+        /* Resume-specific styles */
+        .resume {
+            padding: 120px 20px 40px;
+            max-width: 900px;
             margin: auto;
         }
 
-        /* **MATCHED TO YOUR CONTACT H2** */
-        .resume-section h2 {
+        .resume h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 3rem;
             font-weight: 700;
             color: #7fff00;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
-        .resume-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+        /* Subtitle under heading */
+        .resume-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.3rem;
             margin-bottom: 30px;
+            font-weight: 400;
         }
 
-        /* Resume Layout */
-        .resume-container {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 20px;
-        }
-
-        /* Sticky Sidebar */
-        .resume-sidebar {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            position: sticky;
-            top: 100px;
-            align-self: start;
-            text-align: center;
-        }
-
-        .resume-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        .typewriter {
-            color: #7fff00;
-            font-size: 1rem;
-            min-height: 22px;
-            margin-bottom: 18px;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .resume-block {
-            margin-bottom: 22px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .resume-block h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 8px;
-            color: #7fff00;
-        }
-
-        .resume-main {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .resume-main ul {
-            padding-left: 20px;
-        }
-
-        /* Button glow consistency */
-        .btn.hover-glow {
-            padding: 12px 22px;
+        /* View Resume Button */
+        .btn-view-resume {
+            padding: 12px 24px;
             background-color: #7fff00;
             color: #0f0f0f;
-            font-weight: 700;
             border-radius: 8px;
             text-decoration: none;
+            font-weight: bold;
             display: inline-block;
-            transition: transform .18s ease, box-shadow .22s ease, background-color .18s ease;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
         }
 
-        .btn.hover-glow:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 18px #7fff00;
+        .btn-view-resume:hover {
             background-color: #9fff33;
+            box-shadow: 0 0 15px #7fff00;
+            transform: translateY(-2px);
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-            }
+        .resume-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-            .resume-sidebar {
-                position: static;
-            }
+        /* Timeline Layout */
+        .timeline {
+            position: relative;
+            margin-top: 30px;
+            padding-left: 30px;
+            border-left: 2px solid #7fff00;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            text-align: left;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0px;
+            width: 16px;
+            height: 16px;
+            background-color: #7fff00;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #7fff00;
+        }
+
+        .timeline-item h4 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 5px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0;
+            text-align: left;
+        }
+
+        .timeline-item h5 {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-align: left;
+            margin-top: 0px;
+        }
+
+        .timeline-item p {
+            color: #bbb;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .timeline-item p strong {
+            color: #7fff00;
+        }
+
+        /* Section Titles */
+        .section-title {
+            color: #7fff00;
+            font-size: 2rem;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        /* Certification learning description */
+        .cert-learning {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* Year styling */
+        .year {
+            font-weight: 600;
+            color: #7fff00;
         }
     </style>
 </head>
 
 <body class="dark-theme">
-
-    <!-- Header (unchanged) -->
+    <!-- Header -->
     <header class="main-header animate__animated animate__fadeInDown">
         <nav class="navbar">
-            <div class="logo"><a href="index.html">Prakash Sai Alla</a></div>
+            <div class="logo">
+                <a href="index.html">Prakash Sai Alla</a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -150,106 +171,138 @@
     </header>
 
     <!-- Resume Section -->
-    <section class="resume-section animate__animated animate__fadeInUp">
-        <h2 data-aos="fade-down" data-aos-duration="800">My Resume</h2>
-
-        <!-- Buttons -->
-        <div class="resume-buttons" data-aos="fade-up" data-aos-delay="100">
-            <a class="btn hover-glow" href="Prakash_Sai_Alla_Resume.pdf" download>Download PDF</a>
-            <a class="btn hover-glow" href="Prakash_Sai_Alla_Resume.pdf" target="_blank">Open in New Tab</a>
+    <section class="resume animate__animated animate__fadeInUp">
+        <div class="resume-header">
+            <h2 data-aos="fade-down" data-aos-duration="800">Resume</h2>
+            <p class="resume-subtitle" data-aos="fade-up" data-aos-delay="100">Transforming data into strategic insights
+                through advanced analytics and artificial intelligence</p>
+            <a href="Prakash_Sai_Alla_Resume.pdf" target="_blank" class="btn-view-resume" data-aos="fade-up"
+                data-aos-delay="200">View My Resume</a>
         </div>
 
-        <div class="resume-container" data-aos="fade-up" data-aos-delay="200">
-            <!-- Sidebar -->
-            <aside class="resume-sidebar">
-                <img src="assets/profile.jpg" alt="Profile Picture" class="resume-photo" />
-                <div class="typewriter" id="typewriter-text"></div>
-
-                <div class="resume-block">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Amherst, MA</p>
-                    <p><i class="fas fa-phone"></i> +1 (413) 315-1598</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:palla@umass.edu">palla@umass.edu</a></p>
-                    <p><i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/alla-prakash-sai"
-                            target="_blank">linkedin.com/in/alla-prakash-sai</a>
-                    </p>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Skills</h4>
-                    <ul>
-                        <li>Excel, SQL, Numpy, Pandas, Tableau</li>
-                        <li>Python, Java, C, HTML, Git</li>
-                        <li>Machine Learning, Data Visualization</li>
-                        <li>Statistical Modeling, Analytical Techniques</li>
-                        <li>Teamwork, Communication, Leadership</li>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <div class="resume-main">
-                <div class="resume-block">
-                    <h4>Education</h4>
-                    <p><strong>University of Massachusetts Amherst</strong>, M.S. in Business Analytics – May 2026<br />
-                        GPA: 4.0<br />
-                        Coursework: Data Management, Business Intelligence, Statistics, Python Applications, AI in
-                        Business
-                    </p>
-                    <p><strong>JNTU Hyderabad</strong>, B.Tech in AI & ML – Aug 2024<br />
-                        GPA: 3.2<br />
-                        Silver Medal – NPTEL “The Joy of Computing with Python”
-                    </p>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Experience</h4>
-                    <p><strong>PHN Technologies Pvt Ltd</strong> – Machine Learning Intern (Apr 2023 – Jul 2023)</p>
-                    <ul>
-                        <li>Built ML models (House Price Prediction, Iris Classification, Resume Parsing)</li>
-                        <li>Performed EDA, preprocessing, hyperparameter tuning</li>
-                        <li>Researched SOTA ML techniques for workflow enhancement</li>
-                    </ul>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Projects</h4>
-                    <p><strong>Airbnb Demand & Availability Forecasting</strong> – 90% accuracy, F1-score 0.94</p>
-                    <p><strong>Crypto Price Analysis using AI</strong> – Predictive models for cryptocurrency trends</p>
-                    <p><strong>Semi-Supervised ML for DDoS Detection</strong> – 94.8% accuracy</p>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Certifications</h4>
-                    <ul>
-                        <li>Microsoft Certified: Azure AI Fundamentals</li>
-                        <li>Career Essentials in Generative AI – Microsoft / LinkedIn</li>
-                        <li>Career Essentials in Data Analysis – Microsoft / LinkedIn</li>
-                        <li>Machine Learning & Data Analytics – Infosys</li>
-                    </ul>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Publications</h4>
-                    <p>Semi-Supervised Machine Learning for DDoS Detection – International Journal of Gender, Science
-                        and Technology (Nov 2023)</p>
-                </div>
-
-                <div class="resume-block">
-                    <h4>Leadership</h4>
-                    <p>Coordinator – Street Cause (Jun 2021 – Jul 2023)</p>
-                </div>
+        <!-- Summary -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="300">Summary</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                <p>Graduate student pursuing M.S. in Business Analytics at University of Massachusetts Amherst with a
+                    perfect 4.0 GPA.<br>
+                    Specialized in Data Science, AI, and Machine Learning with hands-on experience in developing
+                    predictive models.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                <p>Skilled in Python, SQL, Tableau, and various ML frameworks with proven track record in building
+                    high-accuracy models.<br>
+                    Experience in real-world applications including cryptocurrency analysis, demand forecasting, and
+                    cybersecurity threat detection.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                <p>Published researcher with expertise in semi-supervised machine learning and cybersecurity
+                    applications.<br>
+                    Demonstrated leadership experience and commitment to social causes through community coordination
+                    roles.</p>
             </div>
         </div>
+
+        <!-- Education -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="300">Education</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                <h4>Master of Science in Business Analytics</h4>
+                <h5>University of Massachusetts Amherst | <span class="year">Aug 2024 – May 2026</span></h5>
+                <p><strong>Cumulative GPA:</strong> 4.0</p>
+                <p>Comprehensive program focusing on data management for business leaders, business intelligence and
+                    analytics, statistical analysis for business decision-making, Python applications in business
+                    contexts, project management methodologies, and practical applications of artificial intelligence in
+                    business environments.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="700">
+                <h4>B.Tech in Artificial Intelligence and Machine Learning</h4>
+                <h5>Jawaharlal Nehru Technological University Hyderabad | <span class="year">Dec 2020 – Aug 2024</span>
+                </h5>
+                <p><strong>Cumulative GPA:</strong> 3.2</p>
+                <p>Developed a strong foundation in Machine Learning algorithms, programming, and computational thinking
+                    with focus on artificial intelligence applications. Awarded Silver Medal in NPTEL's "The Joy of
+                    Computing with Python" for exceptional performance, demonstrating excellence in programming
+                    fundamentals and problem-solving skills.</p>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="600">Experience</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                <h4>Machine Learning and Data Science Intern</h4>
+                <h5>PHN Technologies Pvt Ltd | <span class="year">Apr 2023 – Jul 2023</span></h5>
+                <p>Built and deployed supervised ML models including House Price Prediction, Iris Classification, and
+                    Resume Parsing. Conducted EDA, tuned hyperparameters, and applied preprocessing to improve model
+                    accuracy and reliability. Researched latest advancements to enhance existing workflows with
+                    state-of-the-art ML techniques.</p>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="700">Certifications</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                <h4>Azure AI Fundamentals</h4>
+                <h5>Microsoft</h5>
+                <p class="cert-learning">Gained comprehensive understanding of AI workloads, machine learning
+                    principles, computer vision concepts, natural language processing, and conversational AI on
+                    Microsoft Azure platform.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="900">
+                <h4>Career Essentials in Generative AI</h4>
+                <h5>Microsoft / LinkedIn</h5>
+                <p class="cert-learning">Mastered fundamentals of generative AI technologies, prompt engineering
+                    techniques, ethical AI considerations, and practical applications of large language models in
+                    business contexts.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1000">
+                <h4>Career Essentials in Data Analysis</h4>
+                <h5>Microsoft / LinkedIn</h5>
+                <p class="cert-learning">Developed expertise in data collection, cleaning, and transformation
+                    techniques, statistical analysis methods, data visualization best practices, and storytelling with
+                    data for business insights.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1100">
+                <h4>Machine Learning & Data Analytics</h4>
+                <h5>Infosys</h5>
+                <p class="cert-learning">Enhanced skills in supervised and unsupervised learning algorithms, feature
+                    engineering, model evaluation techniques, and end-to-end machine learning pipeline development for
+                    enterprise applications.</p>
+            </div>
+        </div>
+
+        <!-- Publications -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="1100">Publications</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1300">
+                <h4>Semi-Supervised Machine Learning for DDoS Detection</h4>
+                <h5>International Journal of Gender, Science and Technology | <span class="year">Nov 2023</span></h5>
+                <p>Research paper focusing on innovative semi-supervised ML approaches for cybersecurity threat
+                    detection with 94.8% accuracy in identifying DDoS attacks.</p>
+            </div>
+        </div>
+
+        <!-- Leadership -->
+        <h3 class="section-title" data-aos="fade-right" data-aos-delay="1400">Leadership</h3>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1500">
+                <h4>Coordinator</h4>
+                <h5>Street Cause | <span class="year">Jun 2021 – Jul 2023</span></h5>
+                <p>Led community outreach initiatives and coordinated social welfare programs, demonstrating
+                    organizational leadership and commitment to social impact.</p>
+            </div>
+        </div>
+
     </section>
 
-    <!-- Footer (unchanged) -->
-    <footer data-aos="fade-up" data-aos-delay="400">
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-delay="1400">
         <p>© 2025 Prakash Sai Alla</p>
     </footer>
 
-    <!-- AOS & Typewriter -->
+    <!-- AOS Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
@@ -257,33 +310,17 @@
             offset: 80
         });
 
-        // Typewriter Effect (embedded)
-        const phrases = ["Data Analyst", "AI & ML Enthusiast", "Business Analytics Graduate"];
-        let phraseIndex = 0, letterIndex = 0, current = "", deleting = false;
-        const speed = 100, eraseSpeed = 50, delay = 1500;
-        const el = document.getElementById("typewriter-text");
+        // Animate timeline items on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
 
-        function type() {
-            current = phrases[phraseIndex];
-            if (!deleting) {
-                el.textContent = current.substring(0, letterIndex + 1);
-                letterIndex++;
-                if (letterIndex === current.length) {
-                    deleting = true;
-                    setTimeout(type, delay);
-                    return;
-                }
-            } else {
-                el.textContent = current.substring(0, letterIndex - 1);
-                letterIndex--;
-                if (letterIndex === 0) {
-                    deleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                }
-            }
-            setTimeout(type, deleting ? eraseSpeed : speed);
-        }
-        document.addEventListener("DOMContentLoaded", type);
+        timelineItems.forEach(item => observer.observe(item));
     </script>
 </body>
 
