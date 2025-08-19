@@ -1201,3 +1201,40 @@ section h2 {
         top: auto;
     }
 }
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px) rotate(5deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Animate each nav link individually */
+.nav-links li {
+    animation: slideInFromRight 0.6s ease-out both;
+}
+
+.nav-links li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-links li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav-links li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav-links li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.nav-links li:nth-child(5) {
+    animation-delay: 0.5s;
+}
