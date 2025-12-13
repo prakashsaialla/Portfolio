@@ -1,4 +1,3 @@
-<!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,14 +5,258 @@
     <meta charset="UTF-8">
     <title>Projects</title>
     <link rel="stylesheet" href="assets/styles.css">
-    <link rel="icon" type="image/png" href="assets/favicon.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        /* Header Logo */
+        .logo a {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7fff00;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo a:hover {
+            color: #9fff33;
+        }
+
+        /* Section Heading */
+        .portfolio h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7fff00;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Filters - pill style */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 30px;
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 40px;
+            margin: 0 auto 50px;
+            list-style: none;
+            width: fit-content;
+        }
+
+        .portfolio-filters li {
+            font-weight: 600;
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s, background 0.3s;
+            padding: 8px 16px;
+            border-radius: 25px;
+            user-select: none;
+        }
+
+        .portfolio-filters li:hover {
+            color: #7fff00;
+        }
+
+        .portfolio-filters li.filter-active {
+            background: #222;
+            color: #7fff00;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Portfolio Item */
+        .portfolio-item {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Image Container */
+        .portfolio-image {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Overlay effect - only appears on image hover */
+        .portfolio-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Hover effects - only trigger when hovering over the image area */
+        .portfolio-item:hover .portfolio-image::before {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 18px rgba(127, 255, 0, 0.7);
+        }
+
+        /* Content area */
+        .portfolio-content {
+            position: relative;
+            z-index: 2;
+            padding: 15px;
+        }
+
+        .portfolio-content h3 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        /* Description paragraph - positioned over the image */
+        .portfolio-description {
+            position: relative;
+            top: 53%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0 20px;
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+            line-height: 1.4;
+            margin-bottom: 0px;
+            padding-bottom: 30px;
+        }
+
+        /* Show description on hover */
+        .portfolio-item:hover .portfolio-description {
+            opacity: 1;
+        }
+
+        /* Links styling - hidden but functional through image click */
+        .portfolio-links {
+            display: none;
+        }
+
+        /* Make entire image area clickable */
+        .portfolio-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            color: #888;
+            background: #0f0f0f;
+        }
+
+        /* Basic body and header styles for demo */
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header {
+            background: rgba(15, 15, 15, 0.3);
+            backdrop-filter: blur(15px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.current {
+            color: #7fff00;
+        }
+    </style>
 </head>
 
 <body class="dark-theme">
-    <header class="main-header animate__animated animate__fadeInDown">
+    <!-- Header -->
+    <header class="main-header">
         <nav class="navbar">
-            <div class="logo">Prakash Sai Alla</div>
+            <div class="logo">
+                <a href="index.html">Prakash Sai Alla</a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -24,29 +267,231 @@
         </nav>
     </header>
 
-    <section class="portfolio animate__animated animate__fadeInUp">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="card hover-glow">
-                <h3>Airbnb Demand Forecasting</h3>
-                <p>Built a Random Forest model to predict bookings with 90% accuracy. Engineered seasonal and locational
-                    features.</p>
+    <!-- Portfolio Section -->
+    <section class="portfolio" style="padding:140px 20px 100px;">
+        <h2 data-aos="fade-down">My Projects</h2>
+        <p class="portfolio-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Showcasing data-driven solutions and AI-powered innovations
+        </p>
+
+        <!-- Filters (Functional Pills) -->
+        <ul class="portfolio-filters" data-aos="fade-up" data-aos-delay="200">
+            <li class="filter-active" data-filter="all">All</li>
+            <li data-filter="predictive">Predictive Analytics</li>
+            <li data-filter="dashboard">Dashboard</li>
+            <li data-filter="applications">Applications & Tools</li>
+        </ul>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid">
+
+            <!-- Predictive Analytics -->
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/airbnb.png" alt="Airbnb Forecasting">
+                    <div class="portfolio-description">
+                        Forecasted booking demand using Random Forest with engineered seasonal features (90% accuracy).
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Airbnb Demand and Availability Forecasting</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Airbnb-Forecasting" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="card hover-glow">
-                <h3>Crypto Price Analysis</h3>
-                <p>Used AI techniques and historical data to forecast cryptocurrency price trends and market shifts.</p>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/crypto.png" alt="Crypto Analysis">
+                    <div class="portfolio-description">
+                        AI models and time series forecasting to analyze cryptocurrency market volatility and trends.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Analyzing Crypto Currency Prices through the Lens of Artificial Intelligence</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Crypto-Price-Analysis" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="card hover-glow">
-                <h3>DDoS Attack Detection</h3>
-                <p>Designed a semi-supervised ML model that detects DDoS attacks with 94.8% accuracy using anomaly
-                    detection.</p>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/ddos.png" alt="DDoS Detection">
+                    <div class="portfolio-description">
+                        Built semi-supervised ML model for anomaly detection achieving 94.8% accuracy in real-time
+                        monitoring.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>A Semi Supervised Machine Learning Approach for DDoS Detection</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/DDoS-Detection" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
             </div>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/plant.png" alt="PlantVillage">
+                    <div class="portfolio-description">
+                        Built deep learning model to classify plant diseases using PlantVillage dataset with high
+                        accuracy.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>PlantVillage Dataset Classification</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Plant-Village-Dataset-Classification"
+                            target="_blank"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/house.png" alt="House Price">
+                    <div class="portfolio-description">
+                        Created supervised ML model to predict house prices using regression techniques and feature
+                        engineering.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>House Price Prediction</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/House-Price-Prediction" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/wine.png" alt="Wine Quality">
+                    <div class="portfolio-description">
+                        Built classification models to predict wine quality based on chemical composition attributes.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Wine Quality Prediction</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Wine-Quality-Prediction" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/iris.png" alt="Iris">
+                    <div class="portfolio-description">
+                        Applied supervised ML techniques to classify iris flowers by species using sepal and petal
+                        measurements.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Iris Flowers Classification</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Iris-Flower-Classification" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/usa.png" alt="Optimal USA">
+                    <div class="portfolio-description">
+                        Analyzed socioeconomic, environmental, and quality-of-life data to identify best locations to
+                        live across the U.S.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Optimal Places to Live in USA</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Optimal-Places-to-Live-in-the-USA" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications -->
+            <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-image">
+                    <img src="assets/images/projects/resume.png" alt="Resume Parser">
+                    <div class="portfolio-description">
+                        Developed ML-powered resume parser to extract skills, experience, and education information from
+                        resumes.
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Resume Parser</h3>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/prakashsaialla/Resume-Parser" target="_blank"><i
+                                class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <footer class="animate__animated animate__fadeInUp">
+    <!-- Footer -->
+    <footer class="footer">
         <p>© 2025 Prakash Sai Alla</p>
     </footer>
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 80, duration: 700, easing: 'ease-in-out' });
+
+        // Portfolio filter functionality
+        const filterButtons = document.querySelectorAll('.portfolio-filters li');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+                // Add active class to clicked button
+                button.classList.add('filter-active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        if (item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Make images clickable
+        document.addEventListener('DOMContentLoaded', function () {
+            const portfolioImages = document.querySelectorAll('.portfolio-image');
+
+            portfolioImages.forEach(image => {
+                image.addEventListener('click', function () {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
