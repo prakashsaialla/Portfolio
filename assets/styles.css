@@ -123,7 +123,7 @@ header nav ul {
     text-align: center;
     padding: 100px 20px 120px;
     background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)),
-        url('../assets/background.png') center/cover no-repeat;
+        url('../assets/images/background.png') center/cover no-repeat;
     background-attachment: fixed;
     color: #fff;
     border-bottom: 2px solid #7FFF00;
@@ -1237,4 +1237,12 @@ section h2 {
 
 .nav-links li:nth-child(5) {
     animation-delay: 0.5s;
+}
+
+.hero {
+    padding-bottom: 150px; /* more space in the middle */
+}
+
+.quote-carousel {
+    margin-top: 60px; /* move the glowing quote box down */
 }

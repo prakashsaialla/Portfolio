@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Typing effect variables
     const roles = [
-        "Data Scientist",
-        "AI Engineer",
-        "Machine Learning Specialist",
-        "Big Data Explorer",
-        "Analytics Innovator"
-    ];
+    "Business Analyst",
+    "Data Scientist",
+    "Data Analyst",
+    "Data Visualization Expert",
+    "Statistical Analyst",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Python & SQL Developer"
+];
 
     let roleIndex = 0;
     let charIndex = 0;
