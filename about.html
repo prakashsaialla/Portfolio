@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
-
-    <link rel="icon" type="image/png" href="assets/favicon.jpeg">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
 
     <!-- Fonts -->
     <link
@@ -66,27 +66,33 @@
             padding: 0 20px;
         }
 
-        /* ===== Header (From Portfolio) ===== */
+        /* ===== Header (Updated to match Projects Page) ===== */
         .main-header {
-            background: var(--bg-darker);
+            background: rgba(15, 15, 15, 0.3);
+            backdrop-filter: blur(15px);
             padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+            position: fixed;
             top: 0;
-            z-index: 999;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
+
+        /* Navbar Layout */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        /* Logo */
         .logo a {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: #7fff00;
             text-decoration: none;
             letter-spacing: 1px;
         }
@@ -95,6 +101,7 @@
             color: #9fff33;
         }
 
+        /* Navigation Links */
         .nav-links {
             display: flex;
             list-style: none;
@@ -103,15 +110,18 @@
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: #fff;
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
+        /* Hover & Active State */
         .nav-links a:hover,
         .nav-links a.current {
-            color: var(--primary-color);
+            color: #7fff00;
         }
+
 
         /* ===== Page Title Section ===== */
         .page-title {
@@ -484,10 +494,42 @@
                 transform: translateY(0);
             }
         }
+
+        /* ===== FORCE ABOUT PAGE TO USE PROJECTS HEADER STYLE ===== */
+
+        body.about-page header.main-header {
+            background: rgba(15, 15, 15, 0.3) !important;
+            backdrop-filter: blur(15px) !important;
+            padding: 1rem 2rem !important;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.5) !important;
+            text-align: left !important;
+        }
+
+        body.about-page header.main-header .navbar {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        body.about-page header.main-header .nav-links a {
+            color: #fff !important;
+        }
+
+        body.about-page header.main-header .nav-links a.current {
+            color: #7fff00 !important;
+            font-weight: 600 !important;
+        }
+
+        body.about-page header.main-header .logo a {
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            color: #7fff00 !important;
+        }
+
     </style>
 </head>
 
-<body class="dark-theme">
+<body class="dark-theme about-page">
     <!-- Header -->
     <header class="main-header">
         <nav class="navbar">
@@ -534,26 +576,28 @@
                 <div class="about-details">
                     <ul>
                         <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                            <span>prakashsai@umass.edu</span>
+                            <span>prakashsaialla34@gmail.com</span>
                         </li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 (413) XXX-XXXX</span>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 (413) 315-1598</span>
                         </li>
                         <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Amherst,
                                 Massachusetts</span></li>
                         <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                     </ul>
                     <ul>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
                         <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master of Science in
                                 Business Analytics</span></li>
                         <li><i class="bi bi-chevron-right"></i> <strong>College:</strong> <span>University of
                                 Massachusetts Amherst</span></li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Open to:</strong> <span>Full time opportunities
-                                and internships</span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Open to:</strong> <span>Full Time opportunities
+                                and Internships</span></li>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <div class="section-divider"></div>
 
         <!-- ===== Stats Section ===== -->
         <section class="stats-section">
@@ -564,12 +608,12 @@
                 <div class="stats-grid">
                     <div class="stats-item" data-aos="zoom-in">
                         <i class="fas fa-code"></i>
-                        <span class="stats-number" data-target="12000">0</span>
+                        <span class="stats-number" data-target="14000">0</span>
                         <p>Lines of Code Written</p>
                     </div>
                     <div class="stats-item" data-aos="zoom-in">
                         <i class="fas fa-database"></i>
-                        <span class="stats-number" data-target="35">0</span>
+                        <span class="stats-number" data-target="40">0</span>
                         <p>Datasets Analyzed</p>
                     </div>
                     <div class="stats-item" data-aos="zoom-in">
@@ -585,6 +629,8 @@
                 </div>
             </div>
         </section>
+
+        <div class="section-divider"></div>
 
         <!-- ===== Skills Section ===== -->
         <section class="skills-section">
@@ -682,6 +728,25 @@
             </div>
         </section>
 
+        <div class="section-title" data-aos="fade-up">
+            <p class="section-subtitle">My Soft Skills</p>
+        </div>
+
+        <div class="softskills-grid" data-aos="fade-up">
+            <div class="skill-box">Communication</div>
+            <div class="skill-box">Teamwork</div>
+            <div class="skill-box">Critical Thinking</div>
+            <div class="skill-box">Leadership</div>
+            <div class="skill-box">Problem Solving</div>
+            <div class="skill-box">Adaptability</div>
+            <div class="skill-box">Time Management</div>
+            <div class="skill-box">Creativity</div>
+            <div class="skill-box">Decision Making</div>
+        </div>
+
+        <div class="section-divider"></div>
+
+
         <!-- ===== Interests Section ===== -->
         <section class="interests-section">
             <div class="container">
@@ -733,6 +798,8 @@
                 </div>
             </div>
         </section>
+
+        <div class="section-divider"></div>
 
         <!-- ===== Fun Analyses Section ===== -->
         <section class="fun-section">

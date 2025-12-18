@@ -102,16 +102,16 @@
 
         /* Image Container */
         .portfolio-image {
-            position: relative;
             width: 100%;
-            height: 200px;
+            position: relative;
             overflow: hidden;
+            background: #0a0a0a;
         }
 
         .portfolio-image img {
             width: 100%;
             height: 100%;
-            object-fit: fill;
+            object-fit: cover;
             display: block;
             transition: transform 0.3s ease;
         }
@@ -159,20 +159,30 @@
 
         /* Description paragraph - positioned over the image */
         .portfolio-description {
-            position: relative;
-            top: 53%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 0.95rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 18px 20px;
             text-align: center;
-            padding: 0 20px;
+
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.5;
+
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.85),
+                rgba(0, 0, 0, 0.4),
+                transparent
+            );
+
             opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 2;
-            transition: opacity 0.3s ease;
-            line-height: 1.4;
-            margin-bottom: 0px;
-            padding-bottom: 30px;
         }
 
         /* Show description on hover */
@@ -286,7 +296,7 @@
         <div class="portfolio-grid">
 
             <!-- Predictive Analytics -->
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/airbnb.png" alt="Airbnb Forecasting">
                     <div class="portfolio-description">
@@ -302,7 +312,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/crypto.png" alt="Crypto Analysis">
                     <div class="portfolio-description">
@@ -318,7 +328,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/ddos.png" alt="DDoS Detection">
                     <div class="portfolio-description">
@@ -335,7 +345,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/plant.png" alt="PlantVillage">
                     <div class="portfolio-description">
@@ -352,7 +362,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/house.png" alt="House Price">
                     <div class="portfolio-description">
@@ -369,7 +379,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/wine.png" alt="Wine Quality">
                     <div class="portfolio-description">
@@ -385,7 +395,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item predictive" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/iris.png" alt="Iris">
                     <div class="portfolio-description">
@@ -403,7 +413,7 @@
             </div>
 
             <!-- Dashboard -->
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item dashboard" data-aos="zoom-in">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/usa.png" alt="Optimal USA">
                     <div class="portfolio-description">
@@ -421,7 +431,7 @@
             </div>
 
             <!-- Applications -->
-            <div class="portfolio-item" data-aos="zoom-in">
+            <div class="portfolio-item applications">
                 <div class="portfolio-image">
                     <img src="assets/images/projects/resume.png" alt="Resume Parser">
                     <div class="portfolio-description">
