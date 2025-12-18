@@ -8,7 +8,7 @@
 
     <!-- Base Styles -->
     <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpeg" />
 
     <!-- Fonts & Icons -->
     <link
@@ -335,10 +335,26 @@
             z-index: -1;
             animation: float 10s ease-in-out infinite;
         }
+
+        body.home-page .hero {
+            margin-top: 90px !important;   /* clears fixed header */
+            padding-top: 90px !important;
+            padding-bottom: 150px !important;
+        }
+
+        body.home-page .hero-text {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        body.home-page footer {
+            margin-top: 40px;
+        }
+
     </style>
 </head>
 
-<body class="dark-theme">
+<body class="dark-theme home-page">
     <!-- Header -->
     <header class="main-header">
         <nav class="navbar navbar-right-only">
