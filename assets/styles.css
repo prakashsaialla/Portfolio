@@ -1567,3 +1567,182 @@ footer {
 .info-card p {
     margin: 0;
 }
+
+.typewriter-text {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #7fff00;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    min-height: 1em; /* prevents header jump */
+    opacity: 0.9;
+}
+
+/* ===============================
+   HEADER TYPEWRITER (GLOBAL)
+================================ */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#header-typewriter {
+    font-size: 0.95rem;      /* bigger & readable */
+    color: #ffffff;         /* white text */
+    margin-top: 5px;        /* space from name */
+    min-height: 1.2em;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+#header-typewriter {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* ===============================
+   HEADER NAV FONT SIZE (TEXT ONLY)
+================================ */
+
+header.main-header .nav-links a {
+    font-size: 1.15rem !important;   /* increase text size */
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* ===============================
+   BALANCED HEADER ALIGNMENT
+================================ */
+
+/* Keep navbar centered */
+header.main-header .navbar {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 20px;
+}
+
+/* Move logo slightly left */
+header.main-header .logo {
+    margin-left: -30px;
+}
+
+/* ===============================
+   CONTACT + RESUME FOOTER GAP FIX
+================================ */
+
+/* Remove extra space created by last section */
+.contact-page .contact {
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Kill AOS transform spacing issue */
+.contact-page .contact[data-aos] {
+    transform: none !important;
+}
+
+/* Tight footer */
+.contact-page footer {
+    margin-top: 0 !important;
+    padding: 12px 0 !important;
+}
+
+.resume-page .resume {
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===============================
+   PROJECT GITHUB LINKS
+================================ */
+
+.portfolio-links {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 3;
+}
+
+.portfolio-links a {
+    color: #7fff00;
+    font-size: 1.4rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.portfolio-links a:hover {
+    color: #000;
+    background: #7fff00;
+    transform: scale(1.15);
+}
+
+/* ===============================
+   FIX: MAKE PROJECT LINKS CLICKABLE
+================================ */
+
+.portfolio-links {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 999; /* 👈 VERY IMPORTANT */
+    pointer-events: auto;
+}
+
+.portfolio-links a {
+    pointer-events: auto;
+}
+
+/* Allow clicks to pass through overlays */
+.portfolio-image::before,
+.portfolio-description {
+    pointer-events: none;
+}
+
+.portfolio-item {
+    position: relative;
+}
+
+/* ===============================
+   SHOW GITHUB ICON
+================================ */
+
+.portfolio-links {
+    display: block !important;
+}
+
+.portfolio-links {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 10;
+}
+
+.portfolio-links a {
+    color: #7fff00;
+    font-size: 1.4rem;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.portfolio-links a:hover {
+    background: #7fff00;
+    color: #000;
+    transform: scale(1.15);
+}
+
+.portfolio-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}

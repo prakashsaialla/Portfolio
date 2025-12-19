@@ -82,3 +82,41 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const headerText = document.getElementById("header-typewriter");
+    if (!headerText) return;
+
+    const words = [
+        "Data Analyst",
+        "Business Analytics Graduate",
+        "Machine Learning Enthusiast",
+        "Dashboard & BI Specialist"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeHeaderText() {
+        const currentWord = words[wordIndex];
+
+        if (!isDeleting) {
+            headerText.textContent = currentWord.substring(0, charIndex++);
+            if (charIndex > currentWord.length) {
+                setTimeout(() => isDeleting = true, 1200);
+            }
+        } else {
+            headerText.textContent = currentWord.substring(0, charIndex--);
+            if (charIndex < 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                charIndex = 0;
+            }
+        }
+
+        setTimeout(typeHeaderText, isDeleting ? 50 : 80);
+    }
+
+    typeHeaderText();
+});

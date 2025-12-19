@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Projects</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/script.js"></script>
     <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
@@ -222,24 +223,6 @@
             padding: 0;
         }
 
-        .main-header {
-            background: rgba(15, 15, 15, 0.3);
-            backdrop-filter: blur(15px);
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(51, 51, 51, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .nav-links {
             display: flex;
             list-style: none;
@@ -266,6 +249,7 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">Prakash Sai Alla</a>
+                <span class="typewriter-text" id="header-typewriter"></span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -297,156 +281,213 @@
 
             <!-- Predictive Analytics -->
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/airbnb.png" alt="Airbnb Forecasting">
-                    <div class="portfolio-description">
-                        Forecasted booking demand using Random Forest with engineered seasonal features (90% accuracy).
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Airbnb-Demand-and-Availability-Amsterdam"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/airbnb.png" alt="Airbnb Forecasting">
+                        <div class="portfolio-description">
+                            Forecasted booking demand using Random Forest with engineered seasonal features (90% accuracy).
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Airbnb Demand and Availability Forecasting</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Airbnb-Forecasting" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/crypto.png" alt="Crypto Analysis">
-                    <div class="portfolio-description">
-                        AI models and time series forecasting to analyze cryptocurrency market volatility and trends.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Analyzing-Crypto-Currency-Prices-through-the-Lens-of-Artificial-Intelligence"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/crypto.png" alt="Crypto Analysis">
+                        <div class="portfolio-description">
+                            AI models and time series forecasting to analyze cryptocurrency market volatility and trends.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Analyzing Crypto Currency Prices through the Lens of Artificial Intelligence</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Crypto-Price-Analysis" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/ddos.png" alt="DDoS Detection">
-                    <div class="portfolio-description">
-                        Built semi-supervised ML model for anomaly detection achieving 94.8% accuracy in real-time
-                        monitoring.
+
+                <!-- ENTIRE IMAGE IS CLICKABLE -->
+                <a href="https://github.com/prakashsaialla/A-Semi-Supervised-Machine-Learning-Approach-for-DDoS-Detection"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/ddos.png" alt="DDoS Detection">
+                        <div class="portfolio-description">
+                            Built semi-supervised ML model for anomaly detection achieving 94.8% accuracy in real-time monitoring.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>A Semi Supervised Machine Learning Approach for DDoS Detection</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/DDoS-Detection" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/plant.png" alt="PlantVillage">
-                    <div class="portfolio-description">
-                        Built deep learning model to classify plant diseases using PlantVillage dataset with high
-                        accuracy.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Plant-Village-Dataset-Classification"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/plant.png" alt="PlantVillage">
+                        <div class="portfolio-description">
+                            Built deep learning model to classify plant diseases using PlantVillage dataset with high accuracy.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>PlantVillage Dataset Classification</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Plant-Village-Dataset-Classification"
-                            target="_blank"><i class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/house.png" alt="House Price">
-                    <div class="portfolio-description">
-                        Created supervised ML model to predict house prices using regression techniques and feature
-                        engineering.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/House-Price-Prediction"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/house.png" alt="House Price">
+                        <div class="portfolio-description">
+                            Created supervised ML model to predict house prices using regression techniques and feature engineering.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>House Price Prediction</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/House-Price-Prediction" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/wine.png" alt="Wine Quality">
-                    <div class="portfolio-description">
-                        Built classification models to predict wine quality based on chemical composition attributes.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Wine-Quality-Prediction"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/wine.png" alt="Wine Quality">
+                        <div class="portfolio-description">
+                            Built classification models to predict wine quality based on chemical composition attributes.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Wine Quality Prediction</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Wine-Quality-Prediction" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <div class="portfolio-item predictive" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/iris.png" alt="Iris">
-                    <div class="portfolio-description">
-                        Applied supervised ML techniques to classify iris flowers by species using sepal and petal
-                        measurements.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Iris-Flower-Classification"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/iris.png" alt="Iris">
+                        <div class="portfolio-description">
+                            Applied supervised ML techniques to classify iris flowers by species using sepal and petal measurements.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Iris Flowers Classification</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Iris-Flower-Classification" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
+
 
             <!-- Dashboard -->
             <div class="portfolio-item dashboard" data-aos="zoom-in">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/usa.png" alt="Optimal USA">
-                    <div class="portfolio-description">
-                        Analyzed socioeconomic, environmental, and quality-of-life data to identify best locations to
-                        live across the U.S.
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Optimal-Places-to-Live-in-the-USA"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/usa.png" alt="Optimal USA">
+                        <div class="portfolio-description">
+                            Analyzed socioeconomic, environmental, and quality-of-life data to identify best locations to live across the U.S.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Optimal Places to Live in USA</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Optimal-Places-to-Live-in-the-USA" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
 
+
             <!-- Applications -->
-            <div class="portfolio-item applications">
-                <div class="portfolio-image">
-                    <img src="assets/images/projects/resume.png" alt="Resume Parser">
-                    <div class="portfolio-description">
-                        Developed ML-powered resume parser to extract skills, experience, and education information from
-                        resumes.
+            <div class="portfolio-item applications" data-aos="zoom-in">
+
+                <!-- Entire image clickable -->
+                <a href="https://github.com/prakashsaialla/Resume-Parser"
+                target="_blank"
+                class="portfolio-link">
+
+                    <div class="portfolio-image">
+                        <img src="assets/images/projects/resume.png" alt="Resume Parser">
+                        <div class="portfolio-description">
+                            Developed ML-powered resume parser to extract skills, experience, and education information from resumes.
+                        </div>
                     </div>
-                </div>
+
+                </a>
+
                 <div class="portfolio-content">
                     <h3>Resume Parser</h3>
-                    <div class="portfolio-links">
-                        <a href="https://github.com/prakashsaialla/Resume-Parser" target="_blank"><i
-                                class="fas fa-link"></i></a>
-                    </div>
                 </div>
+
             </div>
+
 
         </div>
     </section>
