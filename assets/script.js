@@ -1,107 +1,247 @@
+/* ============================================================
+   GLOBAL SCRIPT — Prakash Sai Alla Portfolio
+   ============================================================ */
+
 document.addEventListener("DOMContentLoaded", () => {
-    initTypewriter("changing-text", [
-        "Business Analyst",
-        "Data Scientist",
-        "Data Analyst",
-        "Machine Learning Engineer",
-        "AI Engineer",
-        "Python & SQL Developer"
-    ], 75, 50, 1000);
 
-    initTypewriter("header-typewriter", [
-        "Data Analyst",
-        "Business Analytics Graduate",
-        "Machine Learning Enthusiast",
-        "Dashboard & BI Specialist"
-    ], 80, 50, 1200);
+  /* ---- Loading screen ---- */
+  initLoadingScreen();
 
-    initQuoteCarousel();
-    initPortfolioFilters();
+  /* ---- Theme toggle ---- */
+  initThemeToggle();
 
-    window.scrollTo(0, 0);
+  /* ---- Mobile nav ---- */
+  initMobileNav();
+
+  /* ---- Typewriters ---- */
+  initTypewriter("changing-text", [
+    "Data Analyst",
+    "Business Analyst",
+    "BI Dashboard Developer",
+    "SQL & Python Developer",
+    "Predictive Analytics Engineer",
+    "Machine Learning Enthusiast"
+  ], 75, 45, 1100);
+
+  initTypewriter("header-typewriter", [
+    "Data Analyst",
+    "Business Analyst",
+    "BI Dashboard Developer",
+    "Data Engineer"
+  ], 80, 50, 1300);
+
+  /* ---- Portfolio filters ---- */
+  initPortfolioFilters();
+
+  /* ---- Scroll to top on load ---- */
+  window.scrollTo(0, 0);
 });
 
-/* ---------------- TYPEWRITER ---------------- */
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+function initLoadingScreen() {
+  const screen = document.getElementById("loading-screen");
+  if (!screen) return;
+  document.body.style.overflow = "hidden";
+  // Bar animation takes 0.8s (starts at 0.35s), dismiss after ~1.1s total
+  setTimeout(() => {
+    screen.classList.add("hidden");
+    document.body.style.overflow = "";
+  }, 1100);
+}
 
-function initTypewriter(id, words, typeSpeed, deleteSpeed, delay) {
-    const el = document.getElementById(id);
-    if (!el) return;
+/* ============================================================
+   THEME TOGGLE (dark / light)
+   ============================================================ */
+function initThemeToggle() {
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
 
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+  const saved = localStorage.getItem("theme") || "dark";
+  applyTheme(saved);
 
-    function type() {
-        const word = words[wordIndex];
-        el.textContent = deleting
-            ? word.slice(0, --charIndex)
-            : word.slice(0, ++charIndex);
+  btn.addEventListener("click", () => {
+    const current = document.body.classList.contains("light-mode") ? "light" : "dark";
+    const next = current === "dark" ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem("theme", next);
+  });
+}
 
-        if (!deleting && charIndex === word.length) {
-            setTimeout(() => deleting = true, delay);
-        } 
-        else if (deleting && charIndex === 0) {
-            deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-        }
+function applyTheme(theme) {
+  const btn = document.getElementById("theme-toggle");
+  if (theme === "light") {
+    document.body.classList.add("light-mode");
+    if (btn) btn.innerHTML = '<i class="fas fa-moon"></i>';
+  } else {
+    document.body.classList.remove("light-mode");
+    if (btn) btn.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+}
 
-        setTimeout(type, deleting ? deleteSpeed : typeSpeed);
+/* ============================================================
+   MOBILE NAVIGATION
+   ============================================================ */
+function initMobileNav() {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobile-nav");
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileNav.classList.toggle("open");
+  });
+
+  // Close when a link is clicked
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      mobileNav.classList.remove("open");
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener("click", e => {
+    if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+      hamburger.classList.remove("open");
+      mobileNav.classList.remove("open");
+    }
+  });
+}
+
+/* ============================================================
+   TYPEWRITER
+   ============================================================ */
+function initTypewriter(id, words, typeSpeed, deleteSpeed, pauseDelay) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function type() {
+    const word = words[wordIndex];
+    el.textContent = deleting
+      ? word.slice(0, --charIndex)
+      : word.slice(0, ++charIndex);
+
+    if (!deleting && charIndex === word.length) {
+      setTimeout(() => { deleting = true; }, pauseDelay);
+    } else if (deleting && charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
     }
 
-    type();
+    setTimeout(type, deleting ? deleteSpeed : typeSpeed);
+  }
+
+  type();
 }
 
-/* ---------------- QUOTE CAROUSEL ---------------- */
-
-function initQuoteCarousel() {
-    const slides = document.querySelectorAll(".quote-slide");
-    const next = document.querySelector(".next");
-    const prev = document.querySelector(".prev");
-    let index = 0;
-
-    if (!slides.length) return;
-
-    const show = i => {
-        slides.forEach(s => s.classList.remove("active"));
-        slides[i].classList.add("active");
-    };
-
-    next?.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        show(index);
-    });
-
-    prev?.addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        show(index);
-    });
-
-    show(index);
-    setInterval(() => {
-        index = (index + 1) % slides.length;
-        show(index);
-    }, 5000);
-}
-
-/* ---------------- PORTFOLIO FILTERS ---------------- */
-
+/* ============================================================
+   PORTFOLIO FILTERS (fixed: re-trigger AOS)
+   ============================================================ */
 function initPortfolioFilters() {
-    const buttons = document.querySelectorAll(".portfolio-filters li");
-    const items = document.querySelectorAll(".portfolio-item");
+  const buttons = document.querySelectorAll(".portfolio-filters li");
+  const items   = document.querySelectorAll(".portfolio-item");
+  if (!buttons.length) return;
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("filter-active"));
-            btn.classList.add("filter-active");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("filter-active"));
+      btn.classList.add("filter-active");
 
-            const filter = btn.dataset.filter;
+      const filter = btn.dataset.filter;
 
-            items.forEach(item => {
-                item.style.display =
-                    filter === "all" || item.classList.contains(filter)
-                        ? "block"
-                        : "none";
-            });
-        });
+      items.forEach(item => {
+        const match = filter === "all" || item.classList.contains(filter);
+        item.style.display = match ? "" : "none";
+
+        // Re-trigger visibility for filtered items
+        if (match) {
+          item.style.opacity = "1";
+          item.style.transform = "none";
+        }
+      });
     });
+  });
 }
+
+/* ============================================================
+   SKILL BARS (about page)
+   ============================================================ */
+window.addEventListener("load", () => {
+  const bars = document.querySelectorAll(".progress");
+  if (!bars.length) return;
+
+  let animated = false;
+
+  const skillsSection = document.querySelector(".skills-section");
+  if (!skillsSection) return;
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      bars.forEach(bar => {
+        bar.style.width = bar.getAttribute("data-progress") + "%";
+      });
+    }
+  }, { threshold: 0.25 });
+
+  observer.observe(skillsSection);
+});
+
+/* ============================================================
+   STATS COUNTER (about page)
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".stats-number");
+  if (!counters.length) return;
+
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.getAttribute("data-target"), 10);
+      let current  = 0;
+      const step   = target / 60;
+
+      const tick = () => {
+        current += step;
+        if (current < target) {
+          el.textContent = Math.ceil(current).toLocaleString();
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target.toLocaleString();
+        }
+      };
+
+      tick();
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
+});
+
+/* ============================================================
+   RESUME TIMELINE ANIMATION
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  if (!timelineItems.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("show");
+    });
+  }, { threshold: 0.1 });
+
+  timelineItems.forEach(item => obs.observe(item));
+});
+
+/* ============================================================
+   END OF SCRIPT
+   ============================================================ */

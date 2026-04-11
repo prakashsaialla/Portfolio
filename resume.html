@@ -1,344 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Resume</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="assets/script.js"></script>
-    <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@500;700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Prakash Sai Alla</title>
+  <meta name="description" content="Resume of Prakash Sai Alla — Data Analyst and Business Analytics graduate student at UMass Amherst.">
 
-    <!-- AOS Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway:wght@700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-    <style>
-        /* Resume-specific styles */
-        .resume {
-            padding: 120px 20px 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .resume h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #7fff00;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        /* Subtitle under heading */
-        .resume-subtitle {
-            text-align: center;
-            color: #ccc;
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        /* View Resume Button */
-        .btn-view-resume {
-            padding: 12px 24px;
-            background-color: #7fff00;
-            color: #0f0f0f;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .btn-view-resume:hover {
-            background-color: #9fff33;
-            box-shadow: 0 0 15px #7fff00;
-            transform: translateY(-2px);
-        }
-
-        .resume-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        /* Timeline Layout */
-        .timeline {
-            position: relative;
-            margin-top: 30px;
-            padding-left: 30px;
-            border-left: 2px solid #7fff00;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 35px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-            text-align: left;
-        }
-
-        .timeline-item.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 0px;
-            width: 16px;
-            height: 16px;
-            background-color: #7fff00;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #7fff00;
-        }
-
-        .timeline-item h4 {
-            font-size: 1.4rem;
-            color: #fff;
-            margin-bottom: 5px;
-            font-family: 'Poppins', sans-serif;
-            margin-top: 0;
-            text-align: left;
-        }
-
-        .timeline-item h5 {
-            font-size: 1rem;
-            color: #ccc;
-            margin-bottom: 8px;
-            font-weight: 500;
-            text-align: left;
-            margin-top: 0px;
-        }
-
-        .timeline-item p {
-            color: #bbb;
-            margin-bottom: 8px;
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        .timeline-item p strong {
-            color: #7fff00;
-        }
-
-        /* Section Titles */
-        .section-title {
-            color: #7fff00;
-            font-size: 2rem;
-            margin-top: 50px;
-            margin-bottom: 15px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            text-align: left;
-        }
-
-        /* Certification learning description */
-        .cert-learning {
-            font-size: 0.9rem;
-            color: #999;
-            font-style: italic;
-            margin-top: 2px;
-        }
-
-        /* Year styling */
-        .year {
-            font-weight: 600;
-            color: #7fff00;
-        }
-    </style>
+  <style>
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .skill-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+  </style>
 </head>
 
 <body class="dark-theme resume-page">
-    <!-- Header -->
-    <header class="main-header animate__animated animate__fadeInDown">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">Prakash Sai Alla</a>
-                <span class="typewriter-text" id="header-typewriter"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Projects</a></li>
-                <li><a href="resume.html" class="current">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Resume Section -->
-    <section class="resume animate__animated animate__fadeInUp">
-        <div class="resume-header">
-            <h2 data-aos="fade-down" data-aos-duration="800">My Resume</h2>
-            <p class="resume-subtitle" data-aos="fade-up" data-aos-delay="100">Transforming data into strategic insights
-                through advanced analytics and artificial intelligence</p>
-            <a href="Prakash_Sai_Alla_Resume.pdf" target="_blank" class="btn-view-resume" data-aos="fade-up"
-                data-aos-delay="200">View My Resume</a>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">
+      <span class="loader-bracket">{</span>
+      <span class="loader-initials">PSA</span>
+      <span class="loader-bracket">}</span>
+    </div>
+    <div class="loader-tagline">data · analytics · insights</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="home.html">Prakash Sai Alla</a>
+        <span id="header-typewriter"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html" class="current">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav -->
+  <ul class="mobile-nav" id="mobile-nav">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html" class="current">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <!-- Resume Content -->
+  <section class="resume">
+
+    <div class="resume-header">
+      <h2 data-aos="fade-down">My Resume</h2>
+      <p class="resume-subtitle" data-aos="fade-up" data-aos-delay="80">
+        Transforming data into strategic insights through Analytics, BI and AI
+      </p>
+      <a href="Prakash_Sai_Alla_Resume.pdf" target="_blank" class="btn-view-resume" data-aos="fade-up" data-aos-delay="140">
+        <i class="fas fa-eye" style="margin-right:7px;"></i>View Resume
+      </a>
+    </div>
+
+    <!-- Summary -->
+    <h3 class="section-title-resume" data-aos="fade-right">Summary</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p>
+          M.S. Business Analytics student at UMass Amherst (GPA: <strong>4.0</strong>) with a background in AI &amp; ML. Experienced in building predictive models, automating ETL pipelines and delivering executive ready dashboards. Skilled in Python, SQL, Power BI and Tableau - with a strong focus on turning complex data into clear, actionable business recommendations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <h3 class="section-title-resume" data-aos="fade-right">Education</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Master of Science - Business Analytics</h4>
+        <h5>University of Massachusetts Amherst, Isenberg School of Management &nbsp;|&nbsp; <span class="year">Aug 2024 - May 2026</span></h5>
+        <p><strong>GPA: 4.0</strong> &nbsp;·&nbsp; Coursework: Business Intelligence &amp; Analytics, Statistical Analysis for Decision Making, Python for Business, Artificial Intelligence for Business, Data Management, Project Management, Data Visualization in Business, Machine Learning for Business, Cyber Security for Businesses.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Bachelors of Technology - Artificial Intelligence &amp; Machine Learning</h4>
+        <h5>Jawaharlal Nehru Technological University Hyderabad &nbsp;|&nbsp; <span class="year">Nov 2020 - Aug 2024</span></h5>
+        <p><strong>GPA: 3.2</strong> &nbsp;·&nbsp; Strong foundation in ML algorithms, deep learning and data structures. Awarded Silver Medal in NPTEL's "The Joy of Computing with Python" (IIT Madras) for excellence in programming and problem-solving.</p>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <h3 class="section-title-resume" data-aos="fade-right">Experience</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Machine Learning &amp; Data Science Intern</h4>
+        <h5>PHN Technologies Pvt Ltd &nbsp;|&nbsp; <span class="year">Apr 2023 - Jul 2023</span></h5>
+        <p>Audited 5+ structured and unstructured datasets using Python and SQL, improving executive reporting reliability by 15%. Designed and deployed automated ETL pipelines that reduced analyst preprocessing time by 20%. Built 3 end to end ML models (House Price Prediction, Iris Classification, Resume Parser) achieving production ready benchmarks. Engineered a predictive pricing model using regression analysis that outperformed the baseline by 12% and delivered stakeholder ready dashboards translating model outputs into business recommendations.</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <h3 class="section-title-resume" data-aos="fade-right">Technical Skills</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p><strong>Programming &amp; Query Languages</strong></p>
+        <div class="skill-chips" style="margin-top:8px;">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">SQL (Advanced)</span>
+          <span class="skill-chip">R</span>
+          <span class="skill-chip">Excel (Pivot, VLOOKUP, Power Query)</span>
         </div>
-
-        <!-- Summary -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="300">Summary</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                <p>Graduate student pursuing M.S. in Business Analytics at University of Massachusetts Amherst with a
-                    perfect 4.0 GPA.<br>
-                    Specialized in Data Science, AI, and Machine Learning with hands-on experience in developing
-                    predictive models.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
-                <p>Skilled in Python, SQL, Tableau, and various ML frameworks with proven track record in building
-                    high-accuracy models.<br>
-                    Experience in real-world applications including cryptocurrency analysis, demand forecasting, and
-                    cybersecurity threat detection.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
-                <p>Published researcher with expertise in semi-supervised machine learning and cybersecurity
-                    applications.<br>
-                    Demonstrated leadership experience and commitment to social causes through community coordination
-                    roles.</p>
-            </div>
+        <p style="margin-top:14px;"><strong>BI &amp; Visualization</strong></p>
+        <div class="skill-chips" style="margin-top:8px;">
+          <span class="skill-chip">Power BI</span>
+          <span class="skill-chip">Tableau</span>
+          <span class="skill-chip">Excel Dashboards</span>
         </div>
-
-        <!-- Education -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="300">Education</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
-                <h4>Master of Science in Business Analytics</h4>
-                <h5>University of Massachusetts Amherst | <span class="year">Aug 2024 – May 2026</span></h5>
-                <p><strong>Cumulative GPA:</strong> 4.0</p>
-                <p>Comprehensive program focusing on data management for business leaders, business intelligence and
-                    analytics, statistical analysis for business decision-making, Python applications in business
-                    contexts, project management methodologies, and practical applications of artificial intelligence in
-                    business environments.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="700">
-                <h4>B.Tech in Artificial Intelligence and Machine Learning</h4>
-                <h5>Jawaharlal Nehru Technological University Hyderabad | <span class="year">Dec 2020 – Aug 2024</span>
-                </h5>
-                <p><strong>Cumulative GPA:</strong> 3.2</p>
-                <p>Developed a strong foundation in Machine Learning algorithms, programming, and computational thinking
-                    with focus on artificial intelligence applications. Awarded Silver Medal in NPTEL's "The Joy of
-                    Computing with Python" for exceptional performance, demonstrating excellence in programming
-                    fundamentals and problem-solving skills.</p>
-            </div>
+        <p style="margin-top:14px;"><strong>Machine Learning &amp; Analytics</strong></p>
+        <div class="skill-chips" style="margin-top:8px;">
+          <span class="skill-chip">Scikit-learn</span>
+          <span class="skill-chip">XGBoost</span>
+          <span class="skill-chip">Pandas</span>
+          <span class="skill-chip">NumPy</span>
+          <span class="skill-chip">Statistical Modeling</span>
+          <span class="skill-chip">Predictive Analytics</span>
+          <span class="skill-chip">A/B Testing</span>
         </div>
-
-        <!-- Experience -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="600">Experience</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
-                <h4>Machine Learning and Data Science Intern</h4>
-                <h5>PHN Technologies Pvt Ltd | <span class="year">Apr 2023 – Jul 2023</span></h5>
-                <p>Built and deployed supervised ML models including House Price Prediction, Iris Classification, and
-                    Resume Parsing. Conducted EDA, tuned hyperparameters, and applied preprocessing to improve model
-                    accuracy and reliability. Researched latest advancements to enhance existing workflows with
-                    state-of-the-art ML techniques.</p>
-            </div>
+        <p style="margin-top:14px;"><strong>Data Engineering</strong></p>
+        <div class="skill-chips" style="margin-top:8px;">
+          <span class="skill-chip">ETL Pipelines</span>
+          <span class="skill-chip">Data Cleaning &amp; Transformation</span>
+          <span class="skill-chip">Data Warehousing Concepts</span>
+          <span class="skill-chip">Git</span>
         </div>
+      </div>
+    </div>
 
-        <!-- Certifications -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="700">Certifications</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
-                <h4>Azure AI Fundamentals</h4>
-                <h5>Microsoft</h5>
-                <p class="cert-learning">Gained comprehensive understanding of AI workloads, machine learning
-                    principles, computer vision concepts, natural language processing, and conversational AI on
-                    Microsoft Azure platform.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="900">
-                <h4>Career Essentials in Generative AI</h4>
-                <h5>Microsoft / LinkedIn</h5>
-                <p class="cert-learning">Mastered fundamentals of generative AI technologies, prompt engineering
-                    techniques, ethical AI considerations, and practical applications of large language models in
-                    business contexts.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1000">
-                <h4>Career Essentials in Data Analysis</h4>
-                <h5>Microsoft / LinkedIn</h5>
-                <p class="cert-learning">Developed expertise in data collection, cleaning, and transformation
-                    techniques, statistical analysis methods, data visualization best practices, and storytelling with
-                    data for business insights.</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1100">
-                <h4>Machine Learning & Data Analytics</h4>
-                <h5>Infosys</h5>
-                <p class="cert-learning">Enhanced skills in supervised and unsupervised learning algorithms, feature
-                    engineering, model evaluation techniques, and end-to-end machine learning pipeline development for
-                    enterprise applications.</p>
-            </div>
-        </div>
+    <!-- Certifications -->
+    <h3 class="section-title-resume" data-aos="fade-right">Certifications</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Azure AI Fundamentals (AI-900)</h4>
+        <h5>Microsoft</h5>
+        <p class="cert-learning">AI workloads, ML principles, computer vision, NLP and conversational AI on Azure.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Career Essentials in Data Analysis</h4>
+        <h5>Microsoft / LinkedIn</h5>
+        <p class="cert-learning">Data collection, cleaning, transformation, statistical analysis and data storytelling for business insights.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Machine Learning &amp; Data Analytics</h4>
+        <h5>Infosys</h5>
+        <p class="cert-learning">Supervised and unsupervised learning, feature engineering, model evaluation and end-to-end ML pipeline development.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Silver Medal - The Joy of Computing with Python</h4>
+        <h5>NPTEL / IIT Madras</h5>
+        <p class="cert-learning">Exceptional performance in programming fundamentals, problem solving and computational thinking.</p>
+      </div>
+    </div>
 
-        <!-- Publications -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="1100">Publications</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1300">
-                <h4>Semi-Supervised Machine Learning for DDoS Detection</h4>
-                <h5>International Journal of Gender, Science and Technology | <span class="year">Nov 2023</span></h5>
-                <p>Research paper focusing on innovative semi-supervised ML approaches for cybersecurity threat
-                    detection with 94.8% accuracy in identifying DDoS attacks.</p>
-            </div>
-        </div>
+    <!-- Publications -->
+    <h3 class="section-title-resume" data-aos="fade-right">Publications</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Semi-Supervised Machine Learning Approach for DDoS Detection</h4>
+        <h5>International Journal of Gender, Science and Technology &nbsp;|&nbsp; <span class="year">Nov 2023</span></h5>
+        <p>Developed a novel semi-supervised ML framework for cybersecurity threat detection achieving 94.8% accuracy in identifying DDoS attacks in real time network traffic. The model significantly reduces false positives compared to traditional supervised approaches.</p>
+        <a
+          href="https://genderandset.open.ac.uk/index.php/genderandset/article/view/1230"
+          target="_blank"
+          class="publication-link">
+          <i class="fas fa-external-link-alt"></i> View Publication
+        </a>
+      </div>
+    </div>
 
-        <!-- Leadership -->
-        <h3 class="section-title" data-aos="fade-right" data-aos-delay="1400">Leadership</h3>
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1500">
-                <h4>Event Coordinator</h4>
-                <h5>Street Cause | <span class="year">Jun 2021 – Jul 2023</span></h5>
-                <p>Led community outreach initiatives and coordinated social welfare programs, demonstrating
-                    organizational leadership and commitment to social impact.</p>
-            </div>
-            
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1600">
-                <h4>Creative Coordinator</h4>
-                <h5>Indian Student Association | <span class="year">Sep 2024 – Aug 2025</span></h5>
-                <p>Managed creative direction for university cultural and engagement events, developing promotional materials, 
-                coordinating design strategies, and enhancing student participation across multiple activities.</p>
-            </div>
+    <!-- Leadership -->
+    <h3 class="section-title-resume" data-aos="fade-right">Leadership</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Event Coordinator Head</h4>
+        <h5>Indian Student Association, UMass Amherst &nbsp;|&nbsp; <span class="year">Sep 2025 - May 2026</span></h5>
+        <p>Led end to end planning and execution of large scale student events - overseeing logistics, vendor coordination, volunteer management and program delivery for campus wide initiatives.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Creative Coordinator</h4>
+        <h5>Indian Student Association, UMass Amherst &nbsp;|&nbsp; <span class="year">Sep 2024 - Aug 2025</span></h5>
+        <p>Managed creative direction for cultural and engagement events, developing promotional materials and coordinating design strategies to enhance student participation.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Event Coordinator</h4>
+        <h5>Street Cause &nbsp;|&nbsp; <span class="year">Jun 2021 - Jul 2023</span></h5>
+        <p>Led community outreach initiatives and coordinated social welfare programs, demonstrating organizational leadership and commitment to social impact.</p>
+      </div>
+    </div>
 
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="1700">
-                <h4>Event Coordinator - Head</h4>
-                <h5>Indian Student Association | <span class="year">Sep 2025 – May 2026</span></h5>
-                <p>Led end-to-end event planning and execution for large-scale student events, overseeing logistics, vendor 
-                coordination, volunteer management, and ensuring seamless program delivery for campus-wide initiatives.</p>
-            </div>
+  </section>
 
-        </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Prakash Sai Alla &nbsp;·&nbsp; Built with Passion &amp; Data</p>
+  </footer>
 
-    </section>
-
-    <!-- Footer -->
-    <footer data-aos="fade-up" data-aos-delay="1400">
-        <p>© 2025 Prakash Sai Alla</p>
-    </footer>
-
-    <!-- AOS Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 80
-        });
-
-        // Animate timeline items on scroll
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        timelineItems.forEach(item => observer.observe(item));
-    </script>
+  <script src="assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 60, duration: 600, easing: 'ease-in-out' });
+  </script>
 </body>
-
 </html>

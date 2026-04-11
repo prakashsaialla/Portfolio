@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Prakash Sai Alla</title>
+  <meta name="description" content="Data analysis, machine learning and BI dashboard projects by Prakash Sai Alla.">
+
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway:wght@700;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body class="dark-theme">
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">
+      <span class="loader-bracket">{</span>
+      <span class="loader-initials">PSA</span>
+      <span class="loader-bracket">}</span>
+    </div>
+    <div class="loader-tagline">data · analytics · insights</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="home.html">Prakash Sai Alla</a>
+        <span id="header-typewriter"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="current">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav -->
+  <ul class="mobile-nav" id="mobile-nav">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="current">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <h2 data-aos="fade-down">My Projects</h2>
+    <p class="portfolio-subtitle" data-aos="fade-up" data-aos-delay="80">
+      Datan driven solutions across Analytics, Machine Learning and Business Intelligence
+    </p>
+
+    <!-- Filters -->
+    <ul class="portfolio-filters" data-aos="fade-up" data-aos-delay="140">
+      <li class="filter-active" data-filter="all">All</li>
+      <li data-filter="analytics">Data Analytics</li>
+      <li data-filter="ml">Machine Learning</li>
+      <li data-filter="dashboard">Dashboard & BI</li>
+      <li data-filter="tools">Tools & Apps</li>
+    </ul>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+
+      <!-- 1. Health Insurance Premium Prediction - FEATURED -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="0">
+        <span class="featured-badge">Featured</span>
+        <a href="https://github.com/prakashsaialla/Predicting-Health-Insurance-Premiums-Using-Machine-Learning" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/health.png" alt="Health Insurance Premium Prediction">
+            <div class="portfolio-description">Built an XGBoost model (R²=0.84) to predict annual premiums using 10+ demographic and medical risk factors - comparable to actuarial benchmarks.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Health Insurance Premium Prediction</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Pandas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Airbnb Demand Forecasting — FEATURED -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="60">
+        <span class="featured-badge">Featured</span>
+        <a href="https://github.com/prakashsaialla/Airbnb-Demand-and-Availability-Amsterdam" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/airbnb.png" alt="Airbnb Demand Forecasting">
+            <div class="portfolio-description">Forecasted Airbnb booking demand across 50,000+ listings using Random Forest with engineered seasonal features - 90% accuracy.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Airbnb Demand & Availability Forecasting</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Random Forest</span>
+            <span class="tech-tag">Time-Series</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Optimal Places to Live — FEATURED Dashboard -->
+      <div class="portfolio-item dashboard analytics" data-aos="zoom-in" data-aos-delay="120">
+        <span class="featured-badge">Featured</span>
+        <a href="https://github.com/prakashsaialla/Optimal-Places-to-Live-in-the-USA" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/usa.png" alt="Optimal Places to Live USA">
+            <div class="portfolio-description">Weighted KPI scoring model across 10+ socioeconomic indicators to rank all 50 U.S. states - top 5 scored 30%+ above national median.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Optimal Places to Live in USA</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Excel</span>
+            <span class="tech-tag">KPI Modeling</span>
+            <span class="tech-tag">Pivot Tables</span>
+            <span class="tech-tag">VLOOKUP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Crypto Currency Analysis -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="0">
+        <a href="https://github.com/prakashsaialla/Analyzing-Crypto-Currency-Prices-through-the-Lens-of-Artificial-Intelligence" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/crypto.png" alt="Crypto Analysis">
+            <div class="portfolio-description">Applied AI models and time-series forecasting to analyze cryptocurrency market volatility, trends and price elasticity.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Crypto Currency Price Analysis with AI</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">Time-Series</span>
+            <span class="tech-tag">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. DDoS Detection -->
+      <div class="portfolio-item ml" data-aos="zoom-in" data-aos-delay="60">
+        <a href="https://github.com/prakashsaialla/A-Semi-Supervised-Machine-Learning-Approach-for-DDoS-Detection" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/ddos.png" alt="DDoS Detection">
+            <div class="portfolio-description">Semi-supervised ML model for real-time anomaly detection achieving 94.8% accuracy - published research.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Semi-Supervised ML for DDoS Detection</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Semi-Supervised</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Published</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Tinder & Bumble Dashboard -->
+      <div class="portfolio-item dashboard tools" data-aos="zoom-in" data-aos-delay="60">
+        <a href="https://github.com/prakashsaialla" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/tinder.png" alt="Dating App Dashboard" onerror="this.style.background='#1a1a1a';this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22400%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%237fff00%22 text-anchor=%22middle%22 font-size=%2248%22>💘</text></svg>'">
+            <div class="portfolio-description">Built a full analytics dashboard on Tinder &amp; Bumble data  swipe rates, match ratios, response time trends. Data was conclusive: the algorithm needs improvement.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Tinder &amp; Bumble Analytics Dashboard</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">EDA</span>
+            <span class="tech-tag">Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. House Price Prediction -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="120">
+        <a href="https://github.com/prakashsaialla/House-Price-Prediction" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/house.png" alt="House Price Prediction">
+            <div class="portfolio-description">Regression model to predict house prices using feature engineering and advanced preprocessing techniques.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>House Price Prediction</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Regression</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Feature Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Wine Quality Prediction -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="0">
+        <a href="https://github.com/prakashsaialla/Wine-Quality-Prediction" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/wine.png" alt="Wine Quality">
+            <div class="portfolio-description">Classification model predicting wine quality from chemical composition - multi-class accuracy benchmarked across 3 algorithms.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Wine Quality Prediction</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Classification</span>
+            <span class="tech-tag">Random Forest</span>
+            <span class="tech-tag">EDA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. PlantVillage Classification -->
+      <div class="portfolio-item ml" data-aos="zoom-in" data-aos-delay="60">
+        <a href="https://github.com/prakashsaialla/Plant-Village-Dataset-Classification" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/plant.png" alt="PlantVillage Classification">
+            <div class="portfolio-description">Deep learning model to classify plant diseases from images using the PlantVillage dataset with high accuracy.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>PlantVillage Disease Classification</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Image Classification</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Iris Classification -->
+      <div class="portfolio-item analytics ml" data-aos="zoom-in" data-aos-delay="120">
+        <a href="https://github.com/prakashsaialla/Iris-Flower-Classification" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/iris.png" alt="Iris Classification">
+            <div class="portfolio-description">Supervised ML classification of iris flower species using sepal and petal measurements - end-to-end pipeline with EDA.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Iris Flower Classification</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">KNN</span>
+            <span class="tech-tag">SVM</span>
+            <span class="tech-tag">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Resume Parser -->
+      <div class="portfolio-item tools" data-aos="zoom-in" data-aos-delay="0">
+        <a href="https://github.com/prakashsaialla/Resume-Parser" target="_blank" class="portfolio-link">
+          <div class="portfolio-image">
+            <img src="assets/images/projects/resume.png" alt="Resume Parser">
+            <div class="portfolio-description">NLP-powered resume parser that extracts skills, experience and education information automatically from unstructured text.</div>
+          </div>
+        </a>
+        <div class="portfolio-content">
+          <h3>Resume Parser</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">spaCy</span>
+            <span class="tech-tag">Regex</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Prakash Sai Alla &nbsp;·&nbsp; Built with Passion &amp; Data</p>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 60, duration: 600, easing: 'ease-in-out' });
+  </script>
+</body>
+</html>

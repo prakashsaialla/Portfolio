@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Prakash Sai Alla</title>
+
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Fira+Code:wght@500&family=Raleway:wght@700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--bg-dark);
+    }
+
+    .error-code {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 700;
+      color: var(--primary, #7fff00);
+      line-height: 1;
+      margin-bottom: 0;
+      text-shadow: 0 0 40px rgba(127,255,0,0.4);
+      animation: glitch 3s ease-in-out infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% { transform: none; opacity: 1; }
+      92%  { transform: translateX(-3px); opacity: 0.8; }
+      94%  { transform: translateX(3px);  opacity: 0.8; }
+      96%  { transform: translateX(-2px); opacity: 1; }
+    }
+
+    .error-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      color: var(--text-muted, #888);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .error-title {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--text-primary, #e0e0e0);
+      margin-bottom: 14px;
+    }
+
+    .error-description {
+      font-size: 1rem;
+      color: var(--text-secondary, #ccc);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .error-description code {
+      font-family: 'Fira Code', monospace;
+      background: rgba(127,255,0,0.08);
+      color: var(--primary, #7fff00);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .error-nav {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .error-nav a {
+      color: var(--text-muted, #888);
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .error-nav a:hover {
+      color: var(--primary, #7fff00);
+    }
+
+    .glitch-bar {
+      width: 60px;
+      height: 2px;
+      background: var(--primary, #7fff00);
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(127,255,0,0.5);
+      animation: barPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes barPulse {
+      0%, 100% { width: 60px; opacity: 1; }
+      50%       { width: 120px; opacity: 0.6; }
+    }
+  </style>
+</head>
+
+<body class="dark-theme">
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">
+      <span class="loader-bracket">{</span>
+      <span class="loader-initials">PSA</span>
+      <span class="loader-bracket">}</span>
+    </div>
+    <div class="loader-tagline">data · analytics · insights</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <div class="glitch-bar"></div>
+    <p class="error-label">Page Not Found</p>
+
+    <h1 class="error-title">Looks like this data point doesn't exist.</h1>
+
+    <p class="error-description">
+      The page you're looking for has either been moved, deleted, or never existed -
+      kind of like a row that got dropped during <code>data cleaning</code>.<br><br>
+      Let's get you back to something useful.
+    </p>
+
+    <div class="error-actions">
+      <a class="btn" href="home.html">
+        <i class="fas fa-home" style="margin-right:8px;"></i>Go Home
+      </a>
+      <a class="btn btn-outline" href="projects.html">
+        <i class="fas fa-folder-open" style="margin-right:8px;"></i>View Projects
+      </a>
+    </div>
+
+    <nav class="error-nav">
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
