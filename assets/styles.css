@@ -1333,3 +1333,67 @@ footer p {
   .softskills-grid { grid-template-columns: 1fr 1fr; }
   .contact-list { grid-template-columns: 1fr; }
 }
+
+
+/* Home page mini RCB section */
+.rcb-mini-section {
+  margin-top: 30px;
+  text-align: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rcb-mini-section p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.rcb-mini-section a {
+  color: var(--primary);
+  font-size: 0.96rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.rcb-mini-section a:hover {
+  color: var(--primary-hover);
+}
+
+
+/* About page featured project */
+.featured-project-card {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.featured-project-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.featured-project-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.featured-project-card a:hover {
+  color: var(--primary-hover);
+}
+
+.featured-project-section .section-title {
+  margin-bottom: 20px;
+}
+
+.featured-project-section .btn:hover {
+  color: #0a0a0a !important;
+}
